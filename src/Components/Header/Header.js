@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import styled from "styled-components";
 
 const Header = styled.header`
@@ -37,7 +37,7 @@ const Item = styled.li`
 
 const Slink = styled(Link)`
     color:white;
-    font-size:1.5rem;
+    font-size:1.3rem;
 `;
 
 export default withRouter(({ location: { pathname } }) => (

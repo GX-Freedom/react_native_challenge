@@ -8,12 +8,15 @@
 - [ ] Detail
 
 ## API Verbs
-- [ ] Now Playing
-- [ ] Top Rated (TV, )
-- [ ] Popular(TV,)
-- [ ] Upcoming(TV, )
-- [ ] Get Detail(TV, )
-- [ ] Airing Today(TV)
-- [ ] Get Latest(TV, )
-- [ ] Rate TV Show(POST)
-- [ ] Rate Movie(POST)
+- [x] Now Playing
+- [x] Top Rated (TV, )
+- [x] Popular(TV,)
+- [x] Upcoming(TV, )
+- [x] Get Detail(TV, )
+- [x] Airing Today(TV)
+- [x] Get Latest(TV, )
+- [x] Rate TV Show(POST)
+- [x] Rate Movie(POST)
+- [x] Movie Detail
+- [x] TV Detail
+- [x] search

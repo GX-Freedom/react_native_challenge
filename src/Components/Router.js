@@ -1,10 +1,10 @@
 import React from "react";
 import { HashRouter as Router, Route, Redirect, Switch } from "react-router-dom";
-import Home from "Routes/Home";
-import TV from "Routes/TV";
-import Search from "Routes/Search";
-import Detail from "Routes/Detail";
-import Movie from "Routes/Movie";
+import Home from "Routes/Home/HomePresenter";
+import TV from "Routes/TV/TVPresenter";
+import Search from "Routes/Search/SearchPresenter";
+// import Detail from "Routes/Detail/DetailPresenter";
+import Movie from "Routes/Movie/MoviePresenter";
 import Header from 'Components/Header';
 
 
