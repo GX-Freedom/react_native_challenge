@@ -1,10 +1,13 @@
 import axios from "axios";
-require('dotenv').config();
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const api = axios.create({
     baseURL: "https://api.themoviedb.org/3",
     params: {
-        api_key: process.env.api_key,
+        // api_key: process.env.API_KEY,
+        api_key: "349254ebae30eb6fc6ef0a307c64feca",
         language: "ko"
     }
 });
@@ -14,21 +17,21 @@ export const tvApi = {
     getPopular: () => api.get("tv/popular"),
     today: () => api.get("tv/airing_today"),
     weeklyAir: () => api.get("tv/on_the_air"),
-    upComing: () => api.get("tv/upcoming"),
+    // upComing: () => api.get("tv/upcoming"),
     topRated: () => api.get("tv/top_rated"),
-    getDetail: () => api.get(`tv/${id}`, {
+    getLatest: () => api.get("tv/latest"),
+    getDetail: (id) => api.get(`tv/${id}`, {
         params: {
             append_to_response: "videos"
         }
     }),
-    getLatest: () => api.get("tv/latest"),
-    postRate: () => api.get(`tv/${id}/rating`, {
+    postRate: (id) => api.get(`tv/${id}/rating`, {
         params: {
             guest_session_id: id,
             session_id: id
         }
     }),
-    search: (term) => api.get("serach/tv", {
+    search: (term) => api.get("search/tv", {
         params: {
             query: encodeURIComponent(term)
         }
@@ -40,19 +43,19 @@ export const movieApi = {
     getPopular: () => api.get("movie/popular"),
     upComing: () => api.get("movie/upcoming"),
     topRated: () => api.get("movie/top_rated"),
-    getDetail: () => api.get(`movie/${id}`, {
+    getLatest: () => api.get("movie/latest"),
+    getDetail: (id) => api.get(`movie/${id}`, {
         params: {
             append_to_response: "videos"
         }
     }),
-    getLatest: () => api.get("movie/latest"),
-    postRate: () => api.get(`movie/${id}/rating`, {
+    postRate: (id) => api.get(`movie/${id}/rating`, {
         params: {
             guest_session_id: id,
             session_id: id
         }
     }),
-    search: (term) => api.get("serach/movie", {
+    search: (term) => api.get("search/movie", {
         params: {
             query: encodeURIComponent(term)
         }

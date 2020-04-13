@@ -1,4 +1,4 @@
-import SearchPresenter from "./SearchPresenter";
+import SearchContainer from "./SearchContainer";
 
 
-export default SearchPresenter;
+export default SearchContainer;
