@@ -12,14 +12,16 @@ const Container = styled.div`
 
 const Form = styled.form`
     margin-bottom:50px;
-    width:500px;
  `;
 
 const Input = styled.input`
     all:unset;
-    font-size:1rem;
+    font-size:1.5rem;
+    color:#1B9CFC;
     width:100%;
-
+    height:2rem;
+    border-bottom:1px solid #6D214F;
+    box-shadow: 0px 2.5px 5px 0px rgba(0,0,0,0.75);
  `;
 
 const Links = styled(Link)`
@@ -29,7 +31,7 @@ const Links = styled(Link)`
     justify-content:center;
     align-items:center;
     font-size:1.5rem;
-    
+
     &:hover{
         color:#ff4757;
         transition:color 0.5s ease-in-out;
@@ -50,7 +52,7 @@ const SearchPresenter = ({ MovieResults, tvResults, searchTerm, error, loading, 
                         {movie.title}
                     </Links>)}
                 </Section>}
-                {tvResults && tvResults.length > 0 && <Section title="Tv">
+                {tvResults && tvResults.length > 0 && <Section title="TV 프로그램">
                     {tvResults.map(tv => <Links to={`tv/${tv.id}`} key={tv.id}>
                         {tv.name}
                     </Links>)}

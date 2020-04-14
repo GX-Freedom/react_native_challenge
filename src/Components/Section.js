@@ -4,14 +4,22 @@ import styled from "styled-components";
 
 
 const Container = styled.div`
-  :not(:last-child) {
-    margin-bottom: 50px;
-  }
+    padding-top:10px;
+    &:not(:last-child) {
+        margin-bottom: 50px;
+    }
 `;
 
 const Title = styled.span`
-  font-size: 14px;
-  font-weight: 600;
+    font-size: 2rem;
+    font-weight: 600;
+    border-bottom:3px solid #FC427B;
+    /* line-height:1.7; */
+    &:hover{
+        color: #FC427B;
+        border-bottom:3px solid white;
+        transition: color 0.5s linear;
+    }
 `;
 
 const Grid = styled.div`

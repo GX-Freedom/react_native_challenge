@@ -41,15 +41,14 @@ const OpenDays = styled.span`
     margin-top:1rem;
 `;
 
-
 const HomePresenter = ({ getPopular, upComing, topRated, tvtopRated, getLatest, today, error, loading, test }) => loading ? (
     <Loading />
 ) : (
         <Container>
             {/* {test.data.results[0].title} */}
-
+            {/* {console.log(upComing)} */}
             {upComing && upComing.length > 0 && (
-                <Section title="개봉 예정 영화">
+                <Section title={`개봉 예정 영화`}>
                     {upComing.map(movie =>
                         <Item key={movie.id}>
                             <strong style={{ fontSize: "1.3rem" }}>
