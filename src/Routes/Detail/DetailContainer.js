@@ -54,11 +54,12 @@ export default class extends React.Component {
             reasults,
             error,
             loading,
+            result
         } = this.state;
 
         return (
             <>
-                <DetailPresenter reasults={reasults} error={error} loading={loading} />
+                <DetailPresenter reasults={reasults} error={error} loading={loading} result={result} />
             </>
         )
     }

@@ -12,17 +12,21 @@ const Container = styled.div`
 
 const Item = styled.div`
     display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:space-between;
+    align-items:center;
+    margin:0.7rem 0;
 `;
 
 const Links = styled(Link)`
-    margin:0.2rem;
-    color:#ff4757;
+    margin:0 0.8rem 0 0;
+    color:#6D214F;
     overflow: hidden;
     text-overflow:ellipsis;
     display:inline-block;
+    font-size:1.5rem;
+    &:hover{
+        color:#ff4757;
+        transition:color 0.5s ease-in-out;
+    }
 `;
 const OpenDays = styled.span`
     display:flex;
@@ -36,7 +40,7 @@ const HomePresenter = ({ getPopular, upComing, topRated, tvtopRated, getLatest, 
             {upComing && upComing.length > 0 && (
                 <Section title="개봉 예정 영화">
                     {upComing.map(movie =>
-                        <div key={movie.id}>
+                        <Item key={movie.id}>
                             <strong style={{ fontSize: "1.3rem" }}>
                                 <Links key={movie.id} to={`movie/${movie.id}`}>
                                     {movie.title.length > 10 ? movie.title.substring(0, 10) + "..." : movie.title}
@@ -45,53 +49,49 @@ const HomePresenter = ({ getPopular, upComing, topRated, tvtopRated, getLatest, 
                             <span>
                                 {movie.release_date}
                             </span>
-                        </div>)}
+                        </Item>)}
                 </Section>
             )}
             {getPopular && getPopular.length > 0 && (
                 <Section title="인기 영화">
                     {getPopular.map(movie =>
-                        <div style={{ fontSize: "1.3rem" }} key={movie.id}>
+                        <Item style={{ fontSize: "1.3rem" }} key={movie.id}>
                             <Links key={movie.id} to={`movie/${movie.id}`}>
                                 {movie.title.length > 10 ? movie.title.substring(0, 10) + "..." : movie.title}
                             </Links>
                             <span>
                                 {movie.release_date}
                             </span>
-                        </div>)}
+                        </Item>)}
                 </Section>
             )}
             {topRated && topRated.length > 0 && (
                 <Section title="평점 높은 영화">
-                    <Item>
-                        {topRated.map(movie => (
-                            <>
-                                <Links key={movie.id} to={`movie/${movie.id}`}>
-                                    {movie.title.length > 10 ? movie.title.substring(0, 10) + "..." : movie.title}
-                                </Links>
-                                < OpenDays >
-                                    {movie.release_date}
-                                </OpenDays>
-                            </>
-                        ))}
-                    </Item>
+                    {topRated.map(movie => (
+                        <Item key={movie.id}>
+                            <Links key={movie.id} to={`movie/${movie.id}`}>
+                                {movie.title.length > 10 ? movie.title.substring(0, 10) + "..." : movie.title}
+                            </Links>
+                            < OpenDays >
+                                {movie.release_date}
+                            </OpenDays>
+                        </Item>
+                    ))}
                 </Section>
             )}
             {
                 tvtopRated && tvtopRated.length > 0 && (
                     <Section title="평점 높은 TV">
-                        <Item>
-                            {tvtopRated.map(tv =>
-                                <>
-                                    <Links key={tv.id} to={`tv/${tv.id}`}>
-                                        {tv.name.length > 10 ? tv.name.substring(0, 10) + "..." : tv.name}
-                                    </Links>
-                                    < OpenDays >
-                                        {tv.first_air_date}
-                                    </OpenDays>
-                                </>
-                            )}
-                        </Item>
+                        {tvtopRated.map(tv =>
+                            <Item key={tv.id}>
+                                <Links key={tv.id} to={`tv/${tv.id}`}>
+                                    {tv.name.length > 10 ? tv.name.substring(0, 10) + "..." : tv.name}
+                                </Links>
+                                < OpenDays >
+                                    {tv.first_air_date}
+                                </OpenDays>
+                            </Item>
+                        )}
                     </Section>
                 )
             }
@@ -99,12 +99,12 @@ const HomePresenter = ({ getPopular, upComing, topRated, tvtopRated, getLatest, 
                 getLatest && getLatest.length > 0 && (
                     <Section title="sdf">
                         {getLatest.map(tv => (
-                            <>
+                            <Item key={tv.id}>
                                 {tv.name.length > 10 ? tv.name.substring(0, 10) + "..." : tv.name}
                                 < OpenDays >
                                     {tv.first_air_date}
                                 </OpenDays>
-                            </>
+                            </Item>
                         )
                         )}
                     </Section>
@@ -113,20 +113,18 @@ const HomePresenter = ({ getPopular, upComing, topRated, tvtopRated, getLatest, 
             {
                 today && today.length > 0 && (
                     <Section title="오늘 방영 tv">
-                        <Item>
-                            {today.map(tv => {
-                                return (
-                                    <>
-                                        <Links key={tv.id} to={`tv/${tv.id}`}>
-                                            {tv.name.length > 10 ? tv.name.substring(0, 10) + "..." : tv.name}
-                                        </Links>
-                                        < OpenDays >
-                                            {tv.first_air_date}
-                                        </OpenDays>
-                                    </>
-                                )
-                            })}
-                        </Item>
+                        {today.map(tv => {
+                            return (
+                                <Item key={tv.id}>
+                                    <Links key={tv.id} to={`tv/${tv.id}`}>
+                                        {tv.name.length > 10 ? tv.name.substring(0, 10) + "..." : tv.name}
+                                    </Links>
+                                    < OpenDays >
+                                        {tv.first_air_date}
+                                    </OpenDays>
+                                </Item>
+                            )
+                        })}
                     </Section>
                 )
             }
