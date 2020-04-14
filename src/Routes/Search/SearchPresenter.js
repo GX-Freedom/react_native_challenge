@@ -1,17 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import Loading from "Components/Loading";
 
 const Container = styled.div`
   padding: 0px 10px;
 `;
 
 
-const SearchPresenter = (MovieResults, tvResults, searchTerm, error, loading, handleSubmit) => {
-    return (
-        <Container>Search</Container>
-    )
-};
+const SearchPresenter = (MovieResults, tvResults, searchTerm, error, loading, handleSubmit) => loading ? <Loading /> : (
+    <Container>Search</Container>
+)
 
 SearchPresenter.propTypes = {
     MovieResults: PropTypes.array,

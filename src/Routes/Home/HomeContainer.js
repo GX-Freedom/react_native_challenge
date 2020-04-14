@@ -25,7 +25,7 @@ export default class extends React.Component {
             const { data: { results: tvtopRated } } = await tvApi.topRated();
             const { data: { results: getLatest } } = await tvApi.getLatest();
             const { data: { results: today } } = await tvApi.today();
-            console.log(today);
+            // console.log(today);
             this.setState({
                 getPopular,
                 tvgetPopular,

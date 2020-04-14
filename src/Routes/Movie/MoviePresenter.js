@@ -1,15 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-
+import Loading from "Components/Loading";
+import Section from "Components/Section";
 
 const Container = styled.div`
   padding: 0px 10px;
 `;
 
-const MoviePresernter = (nowPlaying, getPopular, upComing, topRated, getLatest, error, loading) => loading ? null : (
-    <Container>Movie</Container>
-)
+const MoviePresernter = (nowPlaying, getPopular, upComing, topRated, getLatest, error, loading) => loading ? <Loading />
+    : (
+        <Container>
+            <Section>
+                Movie
+            </Section>
+        </Container>
+    )
 
 MoviePresernter.propTypes = {
     nowPlaying: PropTypes.array,
