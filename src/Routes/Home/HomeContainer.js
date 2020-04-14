@@ -1,6 +1,6 @@
 import React from "react";
 import HomePresenter from "./HomePresenter"
-import { movieApi, tvApi } from "api";
+import { movieApi, tvApi, api } from "api";
 
 export default class extends React.Component {
     state = {
@@ -12,7 +12,8 @@ export default class extends React.Component {
         getLatest: null,
         today: null,
         error: null,
-        loading: true
+        loading: true,
+        test: null
     }
 
 
@@ -25,7 +26,13 @@ export default class extends React.Component {
             const { data: { results: tvtopRated } } = await tvApi.topRated();
             const { data: { results: getLatest } } = await tvApi.getLatest();
             const { data: { results: today } } = await tvApi.today();
-            // console.log(today);
+
+            // let test;
+
+            const test = await api.get("movie/now_playing");
+            // console.log(test);
+            // console.log(test.data.results[0]);
+
             this.setState({
                 getPopular,
                 tvgetPopular,
@@ -33,8 +40,10 @@ export default class extends React.Component {
                 topRated,
                 tvtopRated,
                 getLatest,
-                today
+                today,
+                test
             })
+
         } catch{
             this.setState({
                 error: "Can Not Found."
@@ -47,20 +56,20 @@ export default class extends React.Component {
     }
 
     render() {
-        const {
-            getPopular,
-            upComing,
-            topRated,
-            tvtopRated,
-            getLatest,
-            today,
-            error,
-            loading,
-        } = this.state;
-
+        // const {
+        //     getPopular,
+        //     upComing,
+        //     topRated,
+        //     tvtopRated,
+        //     getLatest,
+        //     today,
+        //     error,
+        //     loading,
+        //     test
+        // } = this.state;
         return (
             <>
-                <HomePresenter getPopular={getPopular} upComing={upComing} topRated={topRated} tvtopRated={tvtopRated} getLatest={getLatest} today={today} error={error} loading={loading} />
+                <HomePresenter {...this.state} />
             </>
         )
     }

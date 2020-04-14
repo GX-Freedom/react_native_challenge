@@ -34,6 +34,9 @@ const Description = styled.div`
     background:#487eb0;
     color:black;
     flex:1;
+    border-radius:10px;
+    padding:5px;
+    box-shadow: 0px 5px 7px 0px #3B3B98;
 `;
 
 

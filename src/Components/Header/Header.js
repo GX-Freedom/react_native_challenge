@@ -5,6 +5,7 @@ import styled from "styled-components";
 const Header = styled.header`
     width:100%;
     height:50px;
+    z-index:100;
     position:fixed;
     top:0;
     left:0;
@@ -14,7 +15,7 @@ const Header = styled.header`
     align-items:center;
     background-color:#00a8ff;
     box-shadow: 0px 3px 15px 3.5px #3c6382;
-    
+
 `;
 
 const List = styled.ul`

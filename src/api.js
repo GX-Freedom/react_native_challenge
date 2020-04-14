@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const api = axios.create({
+export const api = axios.create({
     baseURL: "https://api.themoviedb.org/3",
     params: {
         // api_key: process.env.API_KEY,
@@ -34,7 +34,7 @@ export const tvApi = {
     }),
     search: (term) => api.get("search/tv", {
         params: {
-            query: encodeURIComponent(term)
+            query: term
         }
     })
 };

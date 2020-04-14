@@ -18,7 +18,9 @@ export default class extends React.Component {
             const { data: { results: getPopular } } = await movieApi.getPopular();
             const { data: { results: upComing } } = await movieApi.upComing();
             const { data: { results: topRated } } = await movieApi.topRated();
-            const { data: { results: getLatest } } = await movieApi.getLatest();
+            const { data: getLatest } = await movieApi.getLatest();
+
+
             this.setState({
                 nowPlaying,
                 getPopular,
@@ -37,18 +39,10 @@ export default class extends React.Component {
         }
     }
     render() {
-        const {
-            nowPlaying,
-            getPopular,
-            upComing,
-            topRated,
-            getLatest,
-            error,
-            loading,
-        } = this.state;
+
 
         return (
-            <MoviePresenter nowPlaying={nowPlaying} getPopular={getPopular} upComing={upComing} topRated={topRated} getLatest={getLatest} error={error} loading={loading} />
+            <MoviePresenter {...this.state} />
         )
     }
 }

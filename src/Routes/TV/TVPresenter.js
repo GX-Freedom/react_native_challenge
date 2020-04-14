@@ -11,8 +11,13 @@ const Container = styled.div`
 
 
 const Item = styled.div`
+     width:100%;
     display:flex;
+    flex-direction:column;
     align-items:center;
+    justify-content:space-between;
+    /* flex-direction:column; */
+    margin:0.7rem 0;
 `;
 
 const Name = styled.div`
@@ -29,10 +34,15 @@ const Links = styled(Link)`
     font-size:1.5rem;
 `;
 
+const OpenDays = styled.span`
+    display:flex;
+    font-size:1rem;
+    margin-top:1rem;
+`;
+
 const TVPresenter = ({ getPopular, today, weeklyAir, topRated, getLatest, error, loading }) => loading ? <Loading />
     : (
         <Container>
-            {console.log(getLatest)}
             <Section title="tv 인기 순위">
                 {getPopular.map(tv =>
                     <Item key={tv.id}>
@@ -41,9 +51,9 @@ const TVPresenter = ({ getPopular, today, weeklyAir, topRated, getLatest, error,
                                 {tv.name.length > 15 ? tv.name.substring(0, 15) + "..." : tv.name}
                             </Links>
                         </Name>
-                        <span>
+                        <OpenDays>
                             {tv.first_air_date}
-                        </span>
+                        </OpenDays>
                     </Item>
                 )}
             </Section>
@@ -55,9 +65,9 @@ const TVPresenter = ({ getPopular, today, weeklyAir, topRated, getLatest, error,
                                 {tv.name.length > 15 ? tv.name.substring(0, 15) + "..." : tv.name}
                             </Links>
                         </Name>
-                        <span>
+                        <OpenDays>
                             {tv.first_air_date}
-                        </span>
+                        </OpenDays>
                     </Item>
                 )}
             </Section>
@@ -69,9 +79,9 @@ const TVPresenter = ({ getPopular, today, weeklyAir, topRated, getLatest, error,
                                 {tv.name.length > 15 ? tv.name.substring(0, 15) + "..." : tv.name}
                             </Links>
                         </Name>
-                        <span>
+                        <OpenDays>
                             {tv.first_air_date}
-                        </span>
+                        </OpenDays>
                     </Item>
                 )}
             </Section>
@@ -83,9 +93,9 @@ const TVPresenter = ({ getPopular, today, weeklyAir, topRated, getLatest, error,
                                 {tv.name.length > 15 ? tv.name.substring(0, 15) + "..." : tv.name}
                             </Links>
                         </Name>
-                        <span>
+                        <OpenDays>
                             {tv.first_air_date}
-                        </span>
+                        </OpenDays>
                     </Item>
                 )}
             </Section>
@@ -97,9 +107,9 @@ const TVPresenter = ({ getPopular, today, weeklyAir, topRated, getLatest, error,
                                 {tv.name.length > 15 ? tv.name.substring(0, 15) + "..." : tv.name}
                             </Links>
                         </Name>
-                        <span>
+                        <OpenDays>
                             {tv.first_air_date}
-                        </span>
+                        </OpenDays>
                     </Item>
                 ) : (<Item key={getLatest.id}>
                     <Name>
@@ -107,9 +117,9 @@ const TVPresenter = ({ getPopular, today, weeklyAir, topRated, getLatest, error,
                             {getLatest.name.length > 15 ? getLatest.name.substring(0, 15) + "..." : getLatest.name}
                         </Links>
                     </Name>
-                    <span>
+                    <OpenDays>
                         {getLatest.first_air_date}
-                    </span>
+                    </OpenDays>
                 </Item>)}
             </Section>
         </Container>

@@ -6,37 +6,48 @@ import { Link } from 'react-router-dom';
 // import { HashRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 import Loading from "Components/Loading";
 
+
+
 const Container = styled.div`
   padding: 0px 10px;
 `;
 
 const Item = styled.div`
+    width:100%;
     display:flex;
+    flex-direction:column;
     align-items:center;
+    justify-content:space-between;
+    /* flex-direction:column; */
     margin:0.7rem 0;
 `;
 
 const Links = styled(Link)`
     margin:0 0.8rem 0 0;
     color:#6D214F;
-    overflow: hidden;
-    text-overflow:ellipsis;
-    display:inline-block;
+    display:flex;
+    justify-content:flex-start;
     font-size:1.5rem;
+
     &:hover{
         color:#ff4757;
         transition:color 0.5s ease-in-out;
     }
 `;
+
 const OpenDays = styled.span`
     display:flex;
-    float:left;
+    font-size:1rem;
+    margin-top:1rem;
 `;
 
-const HomePresenter = ({ getPopular, upComing, topRated, tvtopRated, getLatest, today, error, loading }) => loading ? (
+
+const HomePresenter = ({ getPopular, upComing, topRated, tvtopRated, getLatest, today, error, loading, test }) => loading ? (
     <Loading />
 ) : (
         <Container>
+            {/* {test.data.results[0].title} */}
+
             {upComing && upComing.length > 0 && (
                 <Section title="개봉 예정 영화">
                     {upComing.map(movie =>
@@ -46,9 +57,9 @@ const HomePresenter = ({ getPopular, upComing, topRated, tvtopRated, getLatest, 
                                     {movie.title.length > 10 ? movie.title.substring(0, 10) + "..." : movie.title}
                                 </Links>
                             </strong>
-                            <span>
+                            <OpenDays>
                                 {movie.release_date}
-                            </span>
+                            </OpenDays>
                         </Item>)}
                 </Section>
             )}
@@ -59,9 +70,9 @@ const HomePresenter = ({ getPopular, upComing, topRated, tvtopRated, getLatest, 
                             <Links key={movie.id} to={`movie/${movie.id}`}>
                                 {movie.title.length > 10 ? movie.title.substring(0, 10) + "..." : movie.title}
                             </Links>
-                            <span>
+                            <OpenDays>
                                 {movie.release_date}
-                            </span>
+                            </OpenDays>
                         </Item>)}
                 </Section>
             )}
@@ -138,6 +149,8 @@ HomePresenter.propTypes = {
     topRated: PropTypes.array,
     weeklyAir: PropTypes.array,
     error: PropTypes.string,
-    loading: PropTypes.bool.isRequired
+    loading: PropTypes.bool.isRequired,
+    test: PropTypes.object,
+    // coins: PropTypes.object,
 }
 export default HomePresenter
