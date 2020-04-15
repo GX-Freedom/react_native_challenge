@@ -27,6 +27,7 @@ const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, 150px);
     text-align:center;
+    grid-gap:20px;
 `;
 
 const Section = ({ title, children }) => (

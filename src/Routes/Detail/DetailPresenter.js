@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Loading from "Components/Loading";
 // import { Link } from 'react-router-dom';
+import Error from "Components/Error";
+
 
 
 const Container = styled.div`
@@ -59,6 +61,13 @@ const Average = styled.div`
 //     }
 // `;
 
+const Image = styled.div`
+    background-image:url(${props => `${props.bgUrl}`});
+    height:350px;
+    background-size:auto 100%;
+    background-repeat:no-repeat;
+`;
+
 const Asite = styled.a`
     font-size:1.3rem;
     color:#FEA47F;
@@ -76,6 +85,7 @@ const DetailPresenter = ({ reasults, error, loading, result }) => loading ? <Loa
         <Container>
             {/* {console.log(result.videos)} */}
             {/* <img src={`${result.production_companies[0].logo_path}`} alt="Image" /> */}
+            <Image bgUrl={result.poster_path ? `https://image.tmdb.org/t/p/w300${result.poster_path}` : require("assets/time.jpg")} />
             <Title>
                 {document.location.href.split("#/")[1].split("/")[0] === "movie" ? result.title : result.name}
                 <span style={{ fontSize: "1rem" }}>
@@ -84,7 +94,7 @@ const DetailPresenter = ({ reasults, error, loading, result }) => loading ? <Loa
             </Title>
             <div style={{ margin: "1rem" }}>
                 <Asite href={`https://www.youtube.com/watch?v=${result.videos.results.length > 0 ? result.videos.results[0].key : ""}`} onClick={result.videos.results.length > 0 ? null : handleClick} target="_blank">
-                    영상보로 가기(youtube)
+                    영상 바로가기(youtube)
                 </Asite>
             </div>
             <OpneDays>
@@ -102,6 +112,8 @@ const DetailPresenter = ({ reasults, error, loading, result }) => loading ? <Loa
             <Description>
                 {result.overview}
             </Description>
+            {error && <Error text={error} />}
+
 
         </Container>
     )

@@ -4,6 +4,9 @@ import styled from "styled-components";
 import Loading from "Components/Loading";
 import Section from "Components/Section";
 import { Link } from "react-router-dom";
+import Error from "Components/Error";
+import Poster from "Components/Poster";
+
 
 
 const Container = styled.div`
@@ -48,83 +51,93 @@ const MoviePresernter = ({ nowPlaying, getPopular, upComing, topRated, getLatest
         <Container>
             <Section title="현재 상영중인 영화">
                 {nowPlaying.map(movie =>
-                    <Item key={movie.id}>
-                        <Title>
-                            <Links to={`movie/${movie.id}`}>
-                                {movie.title.length > 15 ? movie.title.substring(0, 15) + "..." : movie.title}
-                            </Links>
-                        </Title>
-                        <OpenDays>
-                            {movie.release_date}
-                        </OpenDays>
-                    </Item>
+                    // <Item key={movie.id}>
+                    //     <Title>
+                    //         <Links to={`movie/${movie.id}`}>
+                    //             {movie.title.length > 15 ? movie.title.substring(0, 15) + "..." : movie.title}
+                    //         </Links>
+                    //     </Title>
+                    //     <OpenDays>
+                    //         {movie.release_date}
+                    //     </OpenDays>
+                    // </Item>
+                    <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} />
                 )}
             </Section>
             <Section title="인기있는 영화">
                 {getPopular.map(movie =>
-                    <Item key={movie.id}>
-                        <Title>
-                            <Links to={`movie/${movie.id}`}>
-                                {movie.title.length > 15 ? movie.title.substring(0, 15) + "..." : movie.title}
-                            </Links>
-                        </Title>
-                        <OpenDays>
-                            {movie.release_date}
-                        </OpenDays>
-                    </Item>
+                    // <Item key={movie.id}>
+                    //     <Title>
+                    //         <Links to={`movie/${movie.id}`}>
+                    //             {movie.title.length > 15 ? movie.title.substring(0, 15) + "..." : movie.title}
+                    //         </Links>
+                    //     </Title>
+                    //     <OpenDays>
+                    //         {movie.release_date}
+                    //     </OpenDays>
+                    // </Item>
+                    <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} />
                 )}
             </Section>
             <Section title="개봉 예정 영화">
                 {upComing.map(movie =>
-                    <Item key={movie.id}>
-                        <Title>
-                            <Links to={`movie/${movie.id}`}>
-                                {movie.title.length > 15 ? movie.title.substring(0, 15) + "..." : movie.title}
-                            </Links>
-                        </Title>
-                        <OpenDays>
-                            {movie.release_date}
-                        </OpenDays>
-                    </Item>
+                    // <Item key={movie.id}>
+                    //     <Title>
+                    //         <Links to={`movie/${movie.id}`}>
+                    //             {movie.title.length > 15 ? movie.title.substring(0, 15) + "..." : movie.title}
+                    //         </Links>
+                    //     </Title>
+                    //     <OpenDays>
+                    //         {movie.release_date}
+                    //     </OpenDays>
+                    // </Item>
+                    <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} />
                 )}
             </Section>
             <Section title="높은 평점">
                 {topRated.map(movie =>
-                    <Item key={movie.id}>
-                        <Title>
-                            <Links to={`movie/${movie.id}`}>
-                                {movie.title.length > 15 ? movie.title.substring(0, 15) + "..." : movie.title}
-                            </Links>
-                        </Title>
-                        <OpenDays>
-                            {movie.release_date}
-                        </OpenDays>
-                    </Item>
+                    // <Item key={movie.id}>
+                    //     <Title>
+                    //         <Links to={`movie/${movie.id}`}>
+                    //             {movie.title.length > 15 ? movie.title.substring(0, 15) + "..." : movie.title}
+                    //         </Links>
+                    //     </Title>
+                    //     <OpenDays>
+                    //         {movie.release_date}
+                    //     </OpenDays>
+                    // </Item>
+                    <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} />
                 )}
             </Section>
             <Section title="개봉 예정 영화">
                 {getLatest.length > 1 ? getLatest.map(movie =>
-                    <Item key={movie.id}>
-                        <Title>
-                            <Links to={`movie/${movie.id}`}>
-                                {movie.title.length > 15 ? movie.title.substring(0, 15) + "..." : movie.title}
-                            </Links>
-                        </Title>
-                        <OpenDays>
-                            {movie.release_date}
-                        </OpenDays>
-                    </Item>
-                ) : (<Item key={getLatest.id}>
-                    <Title>
-                        <Links to={`movie/${getLatest.id}`}>
-                            {getLatest.title.length > 15 ? getLatest.title.substring(0, 15) + "..." : getLatest.title}
-                        </Links>
-                    </Title>
-                    <OpenDays>
-                        {getLatest.release_date ? getLatest.release_date : "미정"}
-                    </OpenDays>
-                </Item>)}
+                    // <Item key={movie.id}>
+                    //     <Title>
+                    //         <Links to={`movie/${movie.id}`}>
+                    //             {movie.title.length > 15 ? movie.title.substring(0, 15) + "..." : movie.title}
+                    //         </Links>
+                    //     </Title>
+                    //     <OpenDays>
+                    //         {movie.release_date}
+                    //     </OpenDays>
+                    // </Item>
+                    <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date ? movie.release_date : "미정"} isMovie={true} />
+                ) : (
+                        // <Item key={getLatest.id}>
+                        //     <Title>
+                        //         <Links to={`movie/${getLatest.id}`}>
+                        //             {getLatest.title.length > 15 ? getLatest.title.substring(0, 15) + "..." : getLatest.title}
+                        //         </Links>
+                        //     </Title>
+                        //     <OpenDays>
+                        //         {getLatest.release_date ? getLatest.release_date : "미정"}
+                        //     </OpenDays>
+                        // </Item>
+                        <Poster key={getLatest.id} id={getLatest.id} imageUrl={getLatest.poster_path} title={getLatest.title} rating={getLatest.vote_average} year={getLatest.release_date ? getLatest.release_date : "미정"} isMovie={true} />
+                    )}
             </Section>
+            {error && <Error text={error} />}
+
         </Container>
     )
 

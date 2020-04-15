@@ -28,7 +28,6 @@ export default class extends React.Component {
             const { data: { results: today } } = await tvApi.today();
 
             // let test;
-
             const test = await api.get("movie/now_playing");
             // console.log(test);
             // console.log(test.data.results[0]);
