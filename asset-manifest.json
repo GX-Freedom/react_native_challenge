@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.js": "/react_native_challenge/static/js/main.f8c2edf9.chunk.js",
-    "main.js.map": "/react_native_challenge/static/js/main.f8c2edf9.chunk.js.map",
+    "main.js": "/react_native_challenge/static/js/main.c776d975.chunk.js",
+    "main.js.map": "/react_native_challenge/static/js/main.c776d975.chunk.js.map",
     "runtime-main.js": "/react_native_challenge/static/js/runtime-main.bc0b54f0.js",
     "runtime-main.js.map": "/react_native_challenge/static/js/runtime-main.bc0b54f0.js.map",
-    "static/js/2.b8b6ed31.chunk.js": "/react_native_challenge/static/js/2.b8b6ed31.chunk.js",
-    "static/js/2.b8b6ed31.chunk.js.map": "/react_native_challenge/static/js/2.b8b6ed31.chunk.js.map",
+    "static/js/2.9be2f5b6.chunk.js": "/react_native_challenge/static/js/2.9be2f5b6.chunk.js",
+    "static/js/2.9be2f5b6.chunk.js.map": "/react_native_challenge/static/js/2.9be2f5b6.chunk.js.map",
     "index.html": "/react_native_challenge/index.html",
-    "precache-manifest.32d7324c5a609672959e547856dad77f.js": "/react_native_challenge/precache-manifest.32d7324c5a609672959e547856dad77f.js",
+    "precache-manifest.d6e981ed93148953b5ef673c49870ab8.js": "/react_native_challenge/precache-manifest.d6e981ed93148953b5ef673c49870ab8.js",
     "service-worker.js": "/react_native_challenge/service-worker.js",
-    "static/js/2.b8b6ed31.chunk.js.LICENSE.txt": "/react_native_challenge/static/js/2.b8b6ed31.chunk.js.LICENSE.txt"
+    "static/js/2.9be2f5b6.chunk.js.LICENSE.txt": "/react_native_challenge/static/js/2.9be2f5b6.chunk.js.LICENSE.txt",
+    "static/media/time.jpg": "/react_native_challenge/static/media/time.82835079.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.bc0b54f0.js",
-    "static/js/2.b8b6ed31.chunk.js",
-    "static/js/main.f8c2edf9.chunk.js"
+    "static/js/2.9be2f5b6.chunk.js",
+    "static/js/main.c776d975.chunk.js"
   ]
 }
