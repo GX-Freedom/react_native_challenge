@@ -82,7 +82,7 @@ const ImageContaniner = styled.div`
 
 
 
-const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
+const Poster = ({ id, imageUrl, title, rating, year, isMovie = false, isAdult = false }) => (
     <Link to={isMovie ? `movie/${id}` : `tv/${id}`}>
         <Container>
             <ImageContaniner >
@@ -113,7 +113,7 @@ Poster.prototype = {
     number: PropTypes.number,
     year: PropTypes.string,
     isMovie: PropTypes.bool,
-    istv: PropTypes.bool,
+    isAdult: PropTypes.bool,
 };
 
 export default Poster;

@@ -175,11 +175,11 @@ const DetailPresenter = ({ reasults, error, loading, result }) => (
                 </>
                 : error ? <Error /> : (
                     <Container>
+                        {/* {console.log(result)} */}
                         <Helmet>
                             <title>Loaging</title>
                             <link rel="shortcut icon" href={result.networks && result.networks.length >= 1 ? `https://image.tmdb.org/t/p/original${result.networks[0].logo_path}` : `https://image.tmdb.org/t/p/original${result.poster_path}`} />
                         </Helmet>
-                        {console.log(result)}
                         <Helmet>
                             <title>{result.title ? result.title : result.name}</title>
                         </Helmet>
@@ -189,9 +189,9 @@ const DetailPresenter = ({ reasults, error, loading, result }) => (
                         }>
                             <i className="fas fa-arrow-left fa-2x"></i>
                         </Links>
-                        {/* {console.log(result.videos)} */}
+                        {/* adult {console.log(result.videos)} */}
                         {/* <img src={`${result.production_companies[0].logo_path}`} alt="Image" /> */}
-                        <Image bgUrl={result.poster_path ? `https://image.tmdb.org/t/p/original${result.poster_path}` : (result.last_episode_to_air ? `https://image.tmdb.org/t/p/original${result.last_episode_to_air.still_path}` : require("assets/time.jpg"))} />
+                        <Image bgUrl={result.adult ? require("assets/time.jpg") : result.poster_path ? `https://image.tmdb.org/t/p/original${result.poster_path}` : (result.last_episode_to_air ? `https://image.tmdb.org/t/p/original${result.last_episode_to_air.still_path}` : require("assets/time.jpg"))} />
                         {/* require("assets/time.jpg") */}
                         <InfoBox>
                             <Title>
@@ -248,7 +248,7 @@ const DetailPresenter = ({ reasults, error, loading, result }) => (
                                 {result.overview}
                             </Description>
                             {error && <Error text={error} />}
-                            <Backdrop bgUrl={result.poster_path ? `https://image.tmdb.org/t/p/original${result.backdrop_path ? result.backdrop_path : result.poster_path}` : require("assets/time.jpg")} />
+                            <Backdrop bgUrl={result.adult ? require("assets/time.jpg") : result.poster_path ? `https://image.tmdb.org/t/p/original${result.backdrop_path ? result.backdrop_path : result.poster_path}` : require("assets/time.jpg")} />
                         </InfoBox>
                     </Container>
                 )

@@ -69,7 +69,7 @@ const HomePresenter = ({ getPopular, upComing, topRated, tvtopRated, getLatest, 
                                         //         {movie.release_date}
                                         //     </OpenDays>
                                         // </Item>
-                                        <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} />
+                                        <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} isMovie={false} isAdult={movie.adult === true ? true : false} />
                                     )}
                                 </Section>
                             )}
@@ -84,7 +84,7 @@ const HomePresenter = ({ getPopular, upComing, topRated, tvtopRated, getLatest, 
                                         //         {movie.release_date}
                                         //     </OpenDays>
                                         // </Item>
-                                        <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} />
+                                        <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} isMovie={false} isAdult={movie.adult === true ? true : false} />
                                     )}
                                 </Section>
                             )}
@@ -99,7 +99,7 @@ const HomePresenter = ({ getPopular, upComing, topRated, tvtopRated, getLatest, 
                                         //         {movie.release_date}
                                         //     </OpenDays>
                                         // </Item>
-                                        <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} />
+                                        <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} isMovie={false} isAdult={movie.adult === true ? true : false} />
                                     ))}
                                 </Section>
                             )}
@@ -115,7 +115,7 @@ const HomePresenter = ({ getPopular, upComing, topRated, tvtopRated, getLatest, 
                                             //         {tv.first_air_date}
                                             //     </OpenDays>
                                             // </Item>
-                                            <Poster key={tv.id} id={tv.id} imageUrl={tv.poster_path} title={tv.name} rating={tv.vote_average} year={tv.first_air_date} isMovie={false} />
+                                            <Poster key={tv.id} id={tv.id} imageUrl={tv.poster_path} title={tv.name} rating={tv.vote_average} year={tv.first_air_date} isMovie={false} isMovie={false} isAdult={tv.adult === true ? true : false} />
                                         )}
                                     </Section>
                                 )
@@ -130,7 +130,7 @@ const HomePresenter = ({ getPopular, upComing, topRated, tvtopRated, getLatest, 
                                             //         {tv.first_air_date}
                                             //     </OpenDays>
                                             // </Item>
-                                            <Poster key={tv.id} id={tv.id} imageUrl={tv.poster_path} title={tv.name} rating={tv.vote_average} year={tv.first_air_date} isMovie={false} />
+                                            <Poster key={tv.id} id={tv.id} imageUrl={tv.poster_path} title={tv.name} rating={tv.vote_average} year={tv.first_air_date} isMovie={false} isMovie={false} isAdult={tv.adult === true ? true : false} />
                                         )
                                         )}
                                     </Section>
@@ -149,7 +149,7 @@ const HomePresenter = ({ getPopular, upComing, topRated, tvtopRated, getLatest, 
                                                 //         {tv.first_air_date}
                                                 //     </OpenDays>
                                                 // </Item>
-                                                <Poster key={tv.id} id={tv.id} imageUrl={tv.poster_path} title={tv.name} rating={tv.vote_average} year={tv.first_air_date} isMovie={false} />
+                                                <Poster key={tv.id} id={tv.id} imageUrl={tv.poster_path} title={tv.name} rating={tv.vote_average} year={tv.first_air_date} isMovie={false} isMovie={false} isAdult={tv.adult === true ? true : false} />
                                             )
                                         })}
                                     </Section>

@@ -67,7 +67,7 @@ const MoviePresernter = ({ nowPlaying, getPopular, upComing, topRated, getLatest
                                 //         {movie.release_date}
                                 //     </OpenDays>
                                 // </Item>
-                                <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} />
+                                <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} isAdult={movie.adult === true ? true : false} />
                             )}
                         </Section>
                         <Section title="인기있는 영화">
@@ -82,7 +82,7 @@ const MoviePresernter = ({ nowPlaying, getPopular, upComing, topRated, getLatest
                                 //         {movie.release_date}
                                 //     </OpenDays>
                                 // </Item>
-                                <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} />
+                                <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} isAdult={movie.adult === true ? true : false} />
                             )}
                         </Section>
                         <Section title="개봉 예정 영화">
@@ -97,7 +97,7 @@ const MoviePresernter = ({ nowPlaying, getPopular, upComing, topRated, getLatest
                                 //         {movie.release_date}
                                 //     </OpenDays>
                                 // </Item>
-                                <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} />
+                                <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} isAdult={movie.adult === true ? true : false} />
                             )}
                         </Section>
                         <Section title="높은 평점">
@@ -112,7 +112,7 @@ const MoviePresernter = ({ nowPlaying, getPopular, upComing, topRated, getLatest
                                 //         {movie.release_date}
                                 //     </OpenDays>
                                 // </Item>
-                                <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} />
+                                <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date} isMovie={true} isAdult={movie.adult === true ? true : false} />
                             )}
                         </Section>
                         <Section title="개봉 예정 영화">
@@ -127,7 +127,7 @@ const MoviePresernter = ({ nowPlaying, getPopular, upComing, topRated, getLatest
                                 //         {movie.release_date}
                                 //     </OpenDays>
                                 // </Item>
-                                <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date ? movie.release_date : "미정"} isMovie={true} />
+                                <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date ? movie.release_date : "미정"} isMovie={true} isAdult={movie.adult === true ? true : false} />
                             ) : (
                                     // <Item key={getLatest.id}>
                                     //     <Title>
@@ -139,7 +139,7 @@ const MoviePresernter = ({ nowPlaying, getPopular, upComing, topRated, getLatest
                                     //         {getLatest.release_date ? getLatest.release_date : "미정"}
                                     //     </OpenDays>
                                     // </Item>
-                                    <Poster key={getLatest.id} id={getLatest.id} imageUrl={getLatest.poster_path} title={getLatest.title} rating={getLatest.vote_average} year={getLatest.release_date ? getLatest.release_date : "미정"} isMovie={true} />
+                                    <Poster key={getLatest.id} id={getLatest.id} imageUrl={getLatest.poster_path} title={getLatest.title} rating={getLatest.vote_average} year={getLatest.release_date ? getLatest.release_date : "미정"} isMovie={true} isAdult={getLatest.adult === true ? true : false} />
                                 )}
                         </Section>
                         {error && <Error text={error} />}
