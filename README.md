@@ -2,10 +2,10 @@
 
 ## Screens
 
-- [ ] Home
-- [ ] TV Show
-- [ ] Sreach
-- [ ] Detail
+- [x] Home
+- [x] TV Show
+- [x] Sreach
+- [x] Detail
 
 ## API Verbs
 - [x] Now Playing
