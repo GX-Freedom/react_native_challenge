@@ -3,9 +3,12 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Loading from "Components/Loading";
 import Section from "Components/Section";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Error from "Components/Error";
 import Poster from "Components/Poster";
+import { Helmet } from "react-helmet";
+
+
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -26,22 +29,26 @@ const Input = styled.input`
     box-shadow: 0px 2.5px 5px 0px rgba(0,0,0,0.75);
  `;
 
-const Links = styled(Link)`
-    margin:0 0.8rem 0 0;
-    color:#6D214F;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:1.5rem;
+// const Links = styled(Link)`
+//     margin:0 0.8rem 0 0;
+//     color:#6D214F;
+//     display:flex;
+//     justify-content:center;
+//     align-items:center;
+//     font-size:1.5rem;
 
-    &:hover{
-        color:#ff4757;
-        transition:color 0.5s ease-in-out;
-    }
-`;
+//     &:hover{
+//         color:#ff4757;
+//         transition:color 0.5s ease-in-out;
+//     }
+// `;
 
 const SearchPresenter = ({ MovieResults, tvResults, searchTerm, error, loading, handleSubmit, updateTerm }) => (
+
     <Container>
+        <Helmet>
+            <title>Search</title>
+        </Helmet>
         <Form onSubmit={handleSubmit}>
             <Input
                 placeholder="Search by Moive and TV Show  is name..." value={searchTerm} onChange={updateTerm}

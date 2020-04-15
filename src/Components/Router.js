@@ -18,7 +18,7 @@ export default () => (
             <Route path="/search" component={Search} />
             <Route path="/movie/:id" component={Detail} />
             <Route path="/tv/:id" component={Detail} />
-            <Route path="https://www.youtube.com/watch?v=" />
+            {/* <Route path="https://www.youtube.com/watch?v=" /> */}
             <Redirect from="*" to="/" />
         </Switch>
     </Router>
