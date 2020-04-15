@@ -87,6 +87,9 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
         <Container>
             <ImageContaniner >
                 <Image bgUrl={imageUrl ? `https://image.tmdb.org/t/p/w300${imageUrl}` : require("../assets/time.jpg")} />
+                {/* // require("../assets/time.jpg") */}
+                {/* `https://image.tmdb.org/t/p/original${result.last_episode_to_air.still_path}` */}
+
                 <Rating>
                     <span role="img" aria-label="rating">★</span>
                     {rating}/10

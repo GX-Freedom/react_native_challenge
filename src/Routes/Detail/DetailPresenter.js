@@ -39,6 +39,7 @@ const Genres = styled.span`
 `;
 const RunTime = styled.div`
     font-size:1.6rem;
+    margin: 0.7rem 0 0 0;
 `;
 
 const Description = styled.p`
@@ -85,7 +86,7 @@ const Image = styled.div`
     background-position:cover cover;
     background-repeat:no-repeat;
     display:flex;
-    flex:0.5;
+    flex:0.7;
     z-index:2;
     &:hover{
 
@@ -132,7 +133,7 @@ const Seasons = styled.div`
     display:flex;
     flex-direction:column;
     &>div{
-        width:135px;
+        width:140px;
         color:red;
         margin:5px;
         cursor: pointer;
@@ -147,6 +148,7 @@ const Seasons = styled.div`
 
     }
     &>div:hover{
+        width:100%;
         &>span{
             display:block;
         }
@@ -154,7 +156,8 @@ const Seasons = styled.div`
 `;
 
 const handleClick = () => {
-    alert("동영상을 찾을 수 없습니다.")
+    alert("찾을 수 없습니다.")
+    return 0
 }
 
 
@@ -174,7 +177,7 @@ const DetailPresenter = ({ reasults, error, loading, result }) => (
                     <Container>
                         <Helmet>
                             <title>Loaging</title>
-                            <link rel="shortcut icon" href={result.networks.length >= 1 ? `https://image.tmdb.org/t/p/original${result.networks[0].logo_path}` : null} />
+                            <link rel="shortcut icon" href={result.networks && result.networks.length >= 1 ? `https://image.tmdb.org/t/p/original${result.networks[0].logo_path}` : `https://image.tmdb.org/t/p/original${result.poster_path}`} />
                         </Helmet>
                         {console.log(result)}
                         <Helmet>
@@ -188,7 +191,8 @@ const DetailPresenter = ({ reasults, error, loading, result }) => (
                         </Links>
                         {/* {console.log(result.videos)} */}
                         {/* <img src={`${result.production_companies[0].logo_path}`} alt="Image" /> */}
-                        <Image bgUrl={result.poster_path ? `https://image.tmdb.org/t/p/original${result.poster_path}` : require("assets/time.jpg")} />
+                        <Image bgUrl={result.poster_path ? `https://image.tmdb.org/t/p/original${result.poster_path}` : (result.last_episode_to_air ? `https://image.tmdb.org/t/p/original${result.last_episode_to_air.still_path}` : require("assets/time.jpg"))} />
+                        {/* require("assets/time.jpg") */}
                         <InfoBox>
                             <Title>
                                 {document.location.href.split("#/")[1].split("/")[0] === "movie" ? result.title : result.name}
@@ -202,9 +206,9 @@ const DetailPresenter = ({ reasults, error, loading, result }) => (
                             </Asite>
                             </div>
                             <div style={{ margin: "1rem" }}>
-                                <Asite href={`${result.homepage}`} target="_blank">
+                                <Asite href={`${result.homepage}`} onClick={result.homepage && result.homepage.length > 0 ? null : handleClick} target="_blank">
                                     공식 홈페이지
-                            </Asite>
+                                </Asite>
                             </div>
                             <OpneDays>
                                 최근 방영: {result.release_date ? result.release_date : result.last_air_date}
@@ -219,7 +223,7 @@ const DetailPresenter = ({ reasults, error, loading, result }) => (
                                 )) : <RunTime key={result.id}>{result.episode_run_time > 0 ? `${result.episode_run_time}분` : ""}</RunTime>) : <RunTime key={result.id}>{result.runtime > 0 ? `${result.runtime}분` : ""}</RunTime>}
                             </Episode>
                             <Seasons>
-                                {result.seasons ? (result.seasons.length > 1 ? result.seasons.map(x => (
+                                {result.seasons ? (result.seasons.length >= 1 ? result.seasons.map(x => (
                                     <div key={x.id}>
                                         {`${x.name}: ${x.air_date}`}
                                         <span>{`${x.overview}`}</span>
@@ -244,7 +248,7 @@ const DetailPresenter = ({ reasults, error, loading, result }) => (
                                 {result.overview}
                             </Description>
                             {error && <Error text={error} />}
-                            <Backdrop bgUrl={result.poster_path ? `https://image.tmdb.org/t/p/original${result.poster_path}` : require("assets/time.jpg")} />
+                            <Backdrop bgUrl={result.poster_path ? `https://image.tmdb.org/t/p/original${result.backdrop_path ? result.backdrop_path : result.poster_path}` : require("assets/time.jpg")} />
                         </InfoBox>
                     </Container>
                 )

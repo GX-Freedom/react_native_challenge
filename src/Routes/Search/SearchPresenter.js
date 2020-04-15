@@ -61,7 +61,7 @@ const SearchPresenter = ({ MovieResults, tvResults, searchTerm, error, loading, 
                         // <Links to={`movie/${movie.id}`} key={movie.id}>
                         //     {movie.title}
                         // </Links>
-                        <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path} title={movie.title} rating={movie.vote_average} year={movie.release_date ? movie.release_date : "미정"} isMovie={true} />
+                        <Poster key={movie.id} id={movie.id} imageUrl={movie.poster_path ? movie.poster_path : movie.backdrop_path} title={movie.title} rating={movie.vote_average} year={movie.release_date ? movie.release_date : "미정"} isMovie={true} />
                     )}
                 </Section>}
                 {tvResults && tvResults.length > 0 && <Section title="TV 프로그램">
@@ -69,7 +69,7 @@ const SearchPresenter = ({ MovieResults, tvResults, searchTerm, error, loading, 
                         // <Links to={`tv/${tv.id}`} key={tv.id}>
                         //     {tv.name}
                         // </Links>
-                        <Poster key={tv.id} id={tv.id} imageUrl={tv.poster_path} title={tv.name} rating={tv.vote_average} year={tv.first_air_date ? tv.first_air_date : "미정"} isMovie={false} />
+                        <Poster key={tv.id} id={tv.id} imageUrl={tv.poster_path ? tv.poster_path : tv.backdrop_path} title={tv.name} rating={tv.vote_average} year={tv.first_air_date ? tv.first_air_date : "미정"} isMovie={false} />
                     )}
                 </Section>}
             </>
