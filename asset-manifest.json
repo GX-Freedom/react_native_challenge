@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/static/js/main.69283929.chunk.js",
-    "main.js.map": "/static/js/main.69283929.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.9ccb71e5.js",
-    "runtime-main.js.map": "/static/js/runtime-main.9ccb71e5.js.map",
-    "static/js/2.510fc170.chunk.js": "/static/js/2.510fc170.chunk.js",
-    "static/js/2.510fc170.chunk.js.map": "/static/js/2.510fc170.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.79fa4f9b98e9f2ae8cbdd4a0c028b35c.js": "/precache-manifest.79fa4f9b98e9f2ae8cbdd4a0c028b35c.js",
-    "service-worker.js": "/service-worker.js",
-    "static/js/2.510fc170.chunk.js.LICENSE.txt": "/static/js/2.510fc170.chunk.js.LICENSE.txt",
-    "static/media/time.jpg": "/static/media/time.82835079.jpg"
+    "main.js": "/react_native_challenge/static/js/main.69283929.chunk.js",
+    "main.js.map": "/react_native_challenge/static/js/main.69283929.chunk.js.map",
+    "runtime-main.js": "/react_native_challenge/static/js/runtime-main.c9f506f8.js",
+    "runtime-main.js.map": "/react_native_challenge/static/js/runtime-main.c9f506f8.js.map",
+    "static/js/2.90d3e7c2.chunk.js": "/react_native_challenge/static/js/2.90d3e7c2.chunk.js",
+    "static/js/2.90d3e7c2.chunk.js.map": "/react_native_challenge/static/js/2.90d3e7c2.chunk.js.map",
+    "index.html": "/react_native_challenge/index.html",
+    "precache-manifest.347387ffcf0dcb36d63d64b3f5bf8552.js": "/react_native_challenge/precache-manifest.347387ffcf0dcb36d63d64b3f5bf8552.js",
+    "service-worker.js": "/react_native_challenge/service-worker.js",
+    "static/js/2.90d3e7c2.chunk.js.LICENSE.txt": "/react_native_challenge/static/js/2.90d3e7c2.chunk.js.LICENSE.txt",
+    "static/media/time.jpg": "/react_native_challenge/static/media/time.82835079.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9ccb71e5.js",
-    "static/js/2.510fc170.chunk.js",
+    "static/js/runtime-main.c9f506f8.js",
+    "static/js/2.90d3e7c2.chunk.js",
     "static/js/main.69283929.chunk.js"
   ]
 }
