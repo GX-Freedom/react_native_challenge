@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/react_native_challenge/static/js/main.69283929.chunk.js",
-    "main.js.map": "/react_native_challenge/static/js/main.69283929.chunk.js.map",
-    "runtime-main.js": "/react_native_challenge/static/js/runtime-main.c9f506f8.js",
-    "runtime-main.js.map": "/react_native_challenge/static/js/runtime-main.c9f506f8.js.map",
-    "static/js/2.90d3e7c2.chunk.js": "/react_native_challenge/static/js/2.90d3e7c2.chunk.js",
-    "static/js/2.90d3e7c2.chunk.js.map": "/react_native_challenge/static/js/2.90d3e7c2.chunk.js.map",
+    "main.js": "/react_native_challenge/static/js/main.7bf79d26.chunk.js",
+    "main.js.map": "/react_native_challenge/static/js/main.7bf79d26.chunk.js.map",
+    "runtime-main.js": "/react_native_challenge/static/js/runtime-main.bc0b54f0.js",
+    "runtime-main.js.map": "/react_native_challenge/static/js/runtime-main.bc0b54f0.js.map",
+    "static/js/2.d24a8ef3.chunk.js": "/react_native_challenge/static/js/2.d24a8ef3.chunk.js",
+    "static/js/2.d24a8ef3.chunk.js.map": "/react_native_challenge/static/js/2.d24a8ef3.chunk.js.map",
     "index.html": "/react_native_challenge/index.html",
-    "precache-manifest.347387ffcf0dcb36d63d64b3f5bf8552.js": "/react_native_challenge/precache-manifest.347387ffcf0dcb36d63d64b3f5bf8552.js",
+    "precache-manifest.3f8343713bc7bd29b830a05bcab3bd66.js": "/react_native_challenge/precache-manifest.3f8343713bc7bd29b830a05bcab3bd66.js",
     "service-worker.js": "/react_native_challenge/service-worker.js",
-    "static/js/2.90d3e7c2.chunk.js.LICENSE.txt": "/react_native_challenge/static/js/2.90d3e7c2.chunk.js.LICENSE.txt",
+    "static/js/2.d24a8ef3.chunk.js.LICENSE.txt": "/react_native_challenge/static/js/2.d24a8ef3.chunk.js.LICENSE.txt",
     "static/media/time.jpg": "/react_native_challenge/static/media/time.82835079.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c9f506f8.js",
-    "static/js/2.90d3e7c2.chunk.js",
-    "static/js/main.69283929.chunk.js"
+    "static/js/runtime-main.bc0b54f0.js",
+    "static/js/2.d24a8ef3.chunk.js",
+    "static/js/main.7bf79d26.chunk.js"
   ]
 }
